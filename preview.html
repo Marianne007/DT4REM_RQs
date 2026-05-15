@@ -1,10 +1,290 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functional and Non-Functional Requirements</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 40px;
+      color: #222;
+      background-color: #fff;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    th,
+    td {
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: bold;
+      text-align: left;
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f7f7f7;
+    }
+
+    .id-col {
+      width: 70px;
+      font-weight: bold;
+    }
+
+    .requirement-col {
+      width: auto;
+    }
+
+    .goals-col {
+      width: 110px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .section-divider td {
+      border-top: 2px solid #333;
+    }
+
+    @media print {
+      body {
+        margin: 20px;
+      }
+
+      table {
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello World!</h1>
+  <div class="table-container">
+    <table>
+      <caption>
+        Functional Requirements (FR), Non-Functional Requirements (NFR), Constraints (C) and Assumptions (A)
+      </caption>
+
+      <thead>
+        <tr>
+          <th class="id-col">ID</th>
+          <th class="requirement-col">Requirement (“The system shall …”)</th>
+          <th class="goals-col">Goal(s)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="id-col">FR1</td>
+          <td>… support role-based responsibilities and approval gates across workflow stages for recurring decisions.</td>
+          <td class="goals-col">4,5,36</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR2</td>
+          <td>… create and maintain standardised decision packages capturing options, rationale, trade-offs, constraints, evidence, and assumptions.</td>
+          <td class="goals-col">7,9,27,36</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR3</td>
+          <td>… support defensible business cases for sustainability investments, incl. split incentives, by documenting value drivers and impacts.</td>
+          <td class="goals-col">6,9,15</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR4</td>
+          <td>… provide value-focused indicators that make benefits explicit, support adoption across teams with varying sustainability maturity.</td>
+          <td class="goals-col">8,39,40</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR5</td>
+          <td>… support continuous capability development by capturing, reusing lessons learned, guidelines, and decision knowledge across cycles.</td>
+          <td class="goals-col">11,35,39</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR6</td>
+          <td>… reduce time and effort for sustainability-related work by automating recurring preparation steps and reusing templates and data.</td>
+          <td class="goals-col">12,16,17</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR7</td>
+          <td>… model budgeting cycles and financial constraints, and filter or flag decision options by feasibility.</td>
+          <td class="goals-col">14,18</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR8</td>
+          <td>… support risk-aware option evaluation by representing uncertainty ranges, sensitivities, and investment risk indicators.</td>
+          <td class="goals-col">15,27</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR9</td>
+          <td>… maintain a consolidated, asset-centric single source of truth, including a coherent, traceable building record with components, materials, condition, and intervention history.</td>
+          <td class="goals-col">19,20,<br>23,41</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR10</td>
+          <td>… maintain an up-to-date as-is building representation by reconciling plans or models with operational changes over time.</td>
+          <td class="goals-col">42,43,46</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR11</td>
+          <td>… ingest, index, search, and link legacy and unstructured documentation to assets, components, and decision levels for reuse.</td>
+          <td class="goals-col">20,21,41</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR12</td>
+          <td>… implement completeness, timeliness, plausibility, and conflict checks and expose confidence indicators for decision-relevant data.</td>
+          <td class="goals-col">22,27</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR13</td>
+          <td>… support decision-making with partial or access-restricted data by using aggregated or proxy values and marking their limitations.</td>
+          <td class="goals-col">19,25</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR14</td>
+          <td>… identify missing decision inputs and support transparent external sourcing by tracking requests, received data, and provenance.</td>
+          <td class="goals-col">24,28</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR15</td>
+          <td>… enable technical interoperability via standardised interfaces and integrate external tool outputs and consultant deliverables into internal workflows.</td>
+          <td class="goals-col">13,29,<br>30,34,37</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">FR16</td>
+          <td>… provide advanced scenario analysis and simulation capabilities to compare options across recurring decision cycles using consistent logic and outputs across portfolio, asset, and building levels.</td>
+          <td class="goals-col">18,31,<br>32,44,47</td>
+        </tr>
+
+        <tr class="section-divider">
+          <td class="id-col">NFR1</td>
+          <td>… provide end-to-end audit trails for decisions, including inputs, approvals, rationale, and evidence.</td>
+          <td class="goals-col">7,36</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR2</td>
+          <td>… ensure reproducibility by versioning decision-relevant data, rules/standards, and explicit assumptions.</td>
+          <td class="goals-col">27</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR3</td>
+          <td>… minimise user effort and process overhead and remain usable under time and staffing constraints.</td>
+          <td class="goals-col">12,17</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR4</td>
+          <td>… remain decision-useful under heterogeneous data baselines across organisations and assets.</td>
+          <td class="goals-col">19,25</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR5</td>
+          <td>… enforce role-based access control and privacy safeguards for sensitive datasets and stakeholder boundaries.</td>
+          <td class="goals-col">5,25</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR6</td>
+          <td>… avoid creating a new silo by supporting interoperable data exchange and integration patterns across the existing tool landscape.</td>
+          <td class="goals-col">29,30</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR7</td>
+          <td>… provide maintainable integrations through stable connectors, controlled versioning, and low integration maintenance overhead.</td>
+          <td class="goals-col">30,33</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR8</td>
+          <td>… ensure consistent calculations and comparable outputs across assets and cycles to enable fair option comparison.</td>
+          <td class="goals-col">31,36</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR9</td>
+          <td>… make trade-offs, constraints, and uncertainty explicit in outputs so results are explainable and defensible.</td>
+          <td class="goals-col">9,15,22</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">NFR10</td>
+          <td>… deliver decision-relevant outputs within time limits suitable for recurring planning and operational cycles.</td>
+          <td class="goals-col">12,16</td>
+        </tr>
+
+        <tr class="section-divider">
+          <td class="id-col">C1</td>
+          <td colspan="2">Data availability and quality vary across organisations and assets so the solution must accommodate heterogeneous data baselines (e.g., BIM).</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">C2</td>
+          <td colspan="2">Decision-relevant information is often available in unstructured or physical formats such as paper documents and requires digitisation effort.</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">C3</td>
+          <td colspan="2">Tenant-related and consumption data are often unavailable or only partially accessible due to privacy constraints.</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">C4</td>
+          <td colspan="2">Asset-specific budgets constrain sustainability action by limiting measures that are feasible regardless of their sustainability impact.</td>
+        </tr>
+
+        <tr class="section-divider">
+          <td class="id-col">A1</td>
+          <td colspan="2">External consultants will remain necessary, so the solution must integrate their deliverables rather than assume full in-house capability.</td>
+        </tr>
+
+        <tr>
+          <td class="id-col">A2</td>
+          <td colspan="2">Sustainability maturity varies across organisations and teams, so the solution must make its value visible even under passive adoption.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
